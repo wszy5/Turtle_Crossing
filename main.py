@@ -28,12 +28,15 @@ while game_is_on:
         for car in cars:
             car.drive()
             if car.distance(player) < 20:
-                print("kolicja")
                 scoreboard.game_over()
                 time.sleep(2)
                 game_is_on = False
     if player.ycor() == 290:
         player.next()
         scoreboard.new_level()
+        for car in cars:
+            car.move_speed += 3
 
     screen.update()
+
+screen.exitonclick()

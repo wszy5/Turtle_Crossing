@@ -14,11 +14,11 @@ class CarManager(Turtle):
         self.penup()
         self.color(random.choice(COLORS))
         self.shapesize(1, 2)
-        self.move_speed = 0.1
+        self.move_speed = 0
         self.goto(x=random.randrange(300, 310, 50), y=random.randrange(-250, 250, 50))
 
 
 
 
     def drive(self):
-        self.goto(self.xcor()-MOVE_INCREMENT, self.ycor())
+        self.goto(self.xcor()-MOVE_INCREMENT - self.move_speed, self.ycor())
